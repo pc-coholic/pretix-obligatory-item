@@ -1,0 +1,23 @@
+{% extends "pretixcontrol/event/settings_base.html" %}
+{% load i18n %}
+{% load bootstrap3 %}
+{% block inside %}
+    <h1>{% trans "Obligatory Item Purchase" %}</h1>
+    <div class="alert alert-info">
+        <p>
+            {% blocktrans trimmed %}
+                You can select items here, that absolutely have to be purchased. Be aware though: Any item selected
+                here has to be in the cart - this plugin will not assume any intelligence for sold out quotas, etc!
+            {% endblocktrans %}
+        </p>
+    </div>
+    <form action="" method="post" class="form-horizontal" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form form layout="horizontal" %}
+        <div class="form-group submit-group">
+            <button type="submit" class="btn btn-primary btn-save">
+                {% trans "Save" %}
+            </button>
+        </div>
+    </form>
+{% endblock %}

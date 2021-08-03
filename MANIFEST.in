@@ -1,0 +1,5 @@
+recursive-include pretix_obligatory_item/static *
+recursive-include pretix_obligatory_item/templates *
+recursive-include pretix_obligatory_item/locale *
+include LICENSE
+exclude .gitlab-ci.yml
